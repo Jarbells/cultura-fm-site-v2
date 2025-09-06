@@ -1,0 +1,44 @@
+/* site-frontend/src/components/TextEditor.css */
+
+.text-editor {
+  border: 1px solid #555;
+  border-radius: 6px;
+}
+
+.editor-menu {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background-color: #2e2e2e;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: 1px solid #555;
+}
+
+.editor-menu button {
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+  border: 1px solid #555;
+  padding: 4px 10px;
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+.editor-menu button.is-active {
+  background-color: #ffa500;
+  color: #1e1e1e;
+  font-weight: bold;
+}
+
+.ProseMirror {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  padding: 12px;
+  min-height: 200px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
