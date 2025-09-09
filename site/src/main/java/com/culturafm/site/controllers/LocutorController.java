@@ -22,7 +22,7 @@ import com.culturafm.site.dto.LocutorDTO;
 import com.culturafm.site.services.LocutorService;
 
 @RestController
-@RequestMapping(value = "/locutores") // O endpoint base para tudo relacionado a locutores
+@RequestMapping(value = "/api/locutores") // O endpoint base para tudo relacionado a locutores
 // @CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
 public class LocutorController {
 

@@ -22,7 +22,7 @@ import com.culturafm.site.dto.ProgramDTO;
 import com.culturafm.site.services.ProgramService;
 
 @RestController
-@RequestMapping(value = "/programas")
+@RequestMapping(value = "/api/programas")
 public class ProgramController {
 
 	@Autowired

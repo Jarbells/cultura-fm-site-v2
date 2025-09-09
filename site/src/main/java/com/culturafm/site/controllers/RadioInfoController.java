@@ -8,9 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/radio-info")
+@RequestMapping(value = "/api/radio-info")
 // ANOTAÇÃO DE DEPURAÇÃO: Permite o acesso de QUALQUER origem.
-@CrossOrigin(origins = "*") 
+// @CrossOrigin(origins = "*") 
 public class RadioInfoController {
 
     @Autowired

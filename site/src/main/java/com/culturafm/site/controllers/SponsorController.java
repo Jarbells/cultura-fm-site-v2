@@ -20,7 +20,7 @@ import com.culturafm.site.dto.SponsorDTO;
 import com.culturafm.site.services.SponsorService;
 
 @RestController
-@RequestMapping(value = "/sponsors")
+@RequestMapping(value = "/api/sponsors")
 // A CORREÇÃO ESTÁ AQUI: Adiciona a anotação CrossOrigin
 // @CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
 public class SponsorController {

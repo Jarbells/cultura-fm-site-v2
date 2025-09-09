@@ -14,7 +14,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/news")
+@RequestMapping(value = "/api/news")
 // A CORREÇÃO ESTÁ AQUI: Adiciona a anotação CrossOrigin
 // @CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
 public class NewsController {

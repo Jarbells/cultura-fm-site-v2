@@ -1,45 +1,20 @@
-import React, { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import './LoginPage.css';
 
 function LoginPage() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const { login } = useAuth();
-    const navigate = useNavigate();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        login(username, password);
-        // Redireciona para a página principal após a tentativa de login
-        navigate('/');
+    const handleLogin = () => {
+        // Volta para o URL original do Spring Security
+        window.location.href = 'http://localhost:8080/oauth2/authorization/auth0';
     };
 
     return (
         <div className="login-container">
             <div className="login-box">
-                <h2>Painel Cultura FM</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label>Usuário:</label>
-                        <input 
-                            type="text" 
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required 
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Senha:</label>
-                        <input 
-                            type="password" 
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required 
-                        />
-                    </div>
-                    <button type="submit">Entrar</button>
-                </form>
+                <h2>Painel Administrativo</h2>
+                <p>Por favor, faça o login para continuar.</p>
+                <button onClick={handleLogin} className="login-button">
+                    Entrar com o Sistema Central
+                </button>
             </div>
         </div>
     );

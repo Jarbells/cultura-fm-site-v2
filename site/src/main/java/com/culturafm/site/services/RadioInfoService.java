@@ -22,20 +22,25 @@ public class RadioInfoService {
 
 	@Transactional
 	public RadioInfoDTO getInfo() {
-		Optional<RadioInfo> obj = repository.findById(fixedId);
-		RadioInfo entity = obj.orElseGet(() -> {
-			RadioInfo newInfo = new RadioInfo();
-			newInfo.setId(fixedId);
-			newInfo.setRadioName("Nome da Rádio");
-			// --- VALORES PADRÃO ADICIONADOS ---
-			newInfo.setOffAirTitle("Retransmissão Via Satélite");
-			newInfo.setOffAirSubtitle("A melhor programação para você");
-		    newInfo.setOffAirImageUrl("https://images.unsplash.com/photo-1598387993441-a364f55142b4?q=80&w=1920&auto=format&fit=crop");
-			return repository.save(newInfo);
-		});
-		return new RadioInfoDTO(entity);
-	}
+	    Optional<RadioInfo> obj = repository.findById(fixedId);
 
+	    // Se a entidade já existir, simplesmente a retorna.
+	    if (obj.isPresent()) {
+	        return new RadioInfoDTO(obj.get());
+	    } 
+	    // Se não existir, cria uma nova, salva, e depois a retorna.
+	    else {
+	        RadioInfo newInfo = new RadioInfo();
+	        newInfo.setId(fixedId);
+	        newInfo.setRadioName("Nome da Rádio");
+	        newInfo.setOffAirTitle("Retransmissão Via Satélite");
+	        newInfo.setOffAirSubtitle("A melhor programação para você");
+	        newInfo.setOffAirImageUrl("https://images.unsplash.com/photo-1598387993441-a364f55142b4?q=80&w=1920&auto=format&fit=crop");
+	        
+	        RadioInfo savedEntity = repository.save(newInfo);
+	        return new RadioInfoDTO(savedEntity);
+	    }
+	}
 	@Transactional
 	public RadioInfoDTO updateInfo(RadioInfoDTO dto) {
 		try {

@@ -13,7 +13,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/events")
+@RequestMapping(value = "/api/events")
 // @CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
 public class EventController {
 
